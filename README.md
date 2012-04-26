@@ -1,6 +1,7 @@
 GeoTweetsMap
 ============
 
+<<<<<<< HEAD
 Geolocate tweets from specific location with Hadoop, Hive and GoogleMaps. 
 
 This source is the result of doing fast prototyping to capture the MWC 2012 tweets in Barcelona with a 4square link inside.
@@ -82,3 +83,6 @@ It's necessary to request the tweets from the server if you would like to visual
 
 From this code you would be able to visualize maps with real-time data, clusters and other data-mining techniques.
 
+=======
+Geolocate tweets from specific location with Hadoop, Hive and GoogleMaps. (Fast prototyping 2012)
+>>>>>>> 1c615effd29e5181e2b5d7e76e0c76cddd20002a
