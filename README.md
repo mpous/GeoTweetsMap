@@ -17,11 +17,11 @@ Afterthat, it's necessary to implement a cron to call the file getTweets.php eve
 */5 * * * * curl [your_url]/getTweets.php
 ```
 
-Every 5 minutes we will receive a picture of the tweets with 4square check-ins, in this case at Barcelona. We will store this data in a JSON file at the files folder.
+Every 5 minutes we will receive a sample of the tweets with 4square check-ins done next to Barcelona. We will store this data in a JSON file at the files folder.
 
 After gathering all the information, we will use Hadoop and Hive to process the information and visualize it in a map. At this point I expect that your Hadoop and Hive is working properly. 
 
-We use Hive in order to experiment with Hadoop using the SQL-like language instead of map-reduce.
+I used Hive in order to experiment with Hadoop using the SQL-like language instead of map-reduce.
 
 ```
 >hive -S -e "select get_json_object(msg, '$.results.geo.coordinates'), get_json_object(msg, '$.results.created_at[0]') from tweets" > result
