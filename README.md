@@ -7,7 +7,9 @@ This source is the result of doing fast prototyping to capture the MWC 2012 twee
 
 To run the code, it's necessary to implement a cron to call the file getTweets.php every 5 minutes:
 
-* */5 * * * * curl [your_url]/getTweets.php
+```
+*/5 * * * * curl [your_url]/getTweets.php
+```
 
 Every 5 minutes we will receive a picture of the tweets with 4square check-ins, in this case at Barcelona. We will store this data in a JSON file at the files folder.
 
@@ -15,11 +17,14 @@ After gathering all the information, we will use Hadoop and Hive to process the 
 
 We use Hive in order to experiment with Hadoop using the SQL-like language instead of map-reduce.
 
-* >hive -S -e "select get_json_object(msg, '$.results.geo.coordinates'), get_json_object(msg, '$.results.created_at[0]') from tweets" > result
-
+```
+>hive -S -e "select get_json_object(msg, '$.results.geo.coordinates'), get_json_object(msg, '$.results.created_at[0]') from tweets" > result
+```
 or
 
-* >hive -S -e "select get_json_object(msg, '$.results.geo.coordinates'), get_json_object(msg, '$.results.location'), get_json_object(msg, '$.results.created_at[0]') from tweets" > result
+```
+>hive -S -e "select get_json_object(msg, '$.results.geo.coordinates'), get_json_object(msg, '$.results.location'), get_json_object(msg, '$.results.created_at[0]') from tweets" > result
+```
 
 This hive command returns us (e.g.):
 
@@ -33,7 +38,9 @@ Mon, 27 Feb 2012 12:44:14 +0000
 
 Afterthat we are able to visualize these information in a map to understand the tweets with 4sq checkins at Barcelona during the days of an important event such as Mobile World Congress 2012 (MWC 2012).
 
-* > drawHeatmapResult.php > markers
+```
+> drawHeatmapResult.php > markers
+```
 
 The markers file will contain these information:
 
