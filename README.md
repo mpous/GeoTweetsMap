@@ -1,11 +1,17 @@
 GeoTweetsMap
 ============
 
-Geolocate tweets from specific location with Hadoop, Hive and GoogleMaps. 
+Geolocate tweets from specific location with Hadoop, Hive and GoogleMaps. This source is the result of doing fast prototyping to capture the MWC 2012 tweets in Barcelona with a 4square link inside.
 
-This source is the result of doing fast prototyping to capture the MWC 2012 tweets in Barcelona with a 4square link inside.
+To run the code you would need a PHP server with Hadoop and Hive working. It's not necessary to have PHP and Hadoop connected because in this fast prototyping example I will push JSON files into the Hadoop system.
 
-To run the code, it's necessary to implement a cron to call the file getTweets.php every 5 minutes:
+First of all, update the getTweets.php file to get the tweets from the location that you would preffer. The query to Twitter is simple:
+
+```php
+$q = "http://search.twitter.com/search.json?q=4sq.com&include_entities=true&result_type=recent&geocode=41.38615876984,2.1710175275803,20mi";
+```
+
+Afterthat, it's necessary to implement a cron to call the file getTweets.php every 5 minutes:
 
 ```
 */5 * * * * curl [your_url]/getTweets.php
