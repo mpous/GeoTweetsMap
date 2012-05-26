@@ -1,6 +1,6 @@
 <?php
 
-$file = "asdf";
+$file = "result";
 $f = fopen($file, "r");
 
 echo "<markers>\n";
