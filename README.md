@@ -82,3 +82,4 @@ It's necessary to request the tweets from the server if you would like to visual
 
 From this code you would be able to visualize maps with real-time data, clusters and other data-mining techniques.
 
+To view the example of this code go to http://marcpous.com/twitter_mwc/tweetsMWC.php
